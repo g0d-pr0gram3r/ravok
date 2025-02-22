@@ -1,0 +1,19 @@
+$textSplit[$getServerVar[server-config;$guildID];¨]
+$setServerVar[server-config;$if[$splitText[1]==s]n$elseif[$splitText[1]==n]s$endif¨$splitText[2]¨$splitText[3]¨$splitText[4]¨$splitText[5]¨$splitText[6]¨$splitText[7]¨$splitText[8]¨$splitText[9]¨$splitText[10];$guildID]
+
+$title[CONFIGURAÇÕES - $serverName[$guildID]]
+
+$textSplit[$getServerVar[server-config;$guildID];¨]
+
+$addField[$if[$splitText[1]!=s]<:cm_off:1342614551371186297>$else<:cm_on:1342614542953484330>$endif Deletar Comando;-# *Ao executar um comando, eu irei deletar a mensagem do usuário.*]
+$addField[$if[$splitText[2]!=s]<:cm_off:1342614551371186297>$else<:cm_on:1342614542953484330>$endif Comando Desconhecido;-# *Caso um usuário executar um comando inexistente, eu irei avisar a ele que eu não possuo o comando desejado.*]
+$addField[$if[$splitText[3]!=s]<:cm_off:1342614551371186297>$else<:cm_on:1342614542953484330>$endif Comandos em Canais Proibidos;-# *Caso você tenha configurado canais que sejam proibidos de usar comandos, você pode ativar esta opção para que, quando um usuário tente executar um comando em canais proibidos, eu avise que não é possível executar comandos no canal.*]
+
+$removeAllComponents
+
+$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/server/0;Deletar Comando;$if[$splitText[1]!=s]danger$elsesuccess$endif;no;$if[$splitText[1]!=s]<:cm_off:1342614551371186297>$else<:cm_on:1342614542953484330>$endif]
+$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/server/1;Comando Desconhecido;$if[$splitText[2]!=s]danger$elsesuccess$endif;no;$if[$splitText[2]!=s]<:cm_off:1342614551371186297>$else<:cm_on:1342614542953484330>$endif]
+$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/server/2;Comandos em Canais Proibidos;$if[$splitText[3]!=s]danger$elsesuccess$endif;no;$if[$splitText[3]!=s]<:cm_off:1342614551371186297>$else<:cm_on:1342614542953484330>$endif]
+$addButton[yes;$authorID/$calculate[$getTimestamp+(60*20)]/server/voltar;;secondary;no;<:voltar:1342617785125175369>]
+$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/server/message;Configurar Mensagem Para Canais Proibidos;primary;no;<:message:1342620220782678207>]
+$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/server/canal;Proibir/Desproibir Canal;primary;no;<:proibido:1342621260558893140>]
