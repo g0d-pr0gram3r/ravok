@@ -1,4 +1,5 @@
-$botTyping
+$if[$customID!=] $removeAllComponents $endif
+$if[$customID==] $botTyping $endif
 
 $if[$guildID==] $reply
 <:errado:1342581104305115239> ╸<@$authorID>, esse comando só pode ser usado em servidores, pois serve para me configurar neles.
