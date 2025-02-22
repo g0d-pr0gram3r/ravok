@@ -1,0 +1,18 @@
+$botTyping
+
+$if[$guildID==] $reply
+<:errado:1342581104305115239> ╸<@$authorID>, esse comando só pode ser usado em servidores, pois serve para me configurar neles.
+$stop $endif
+
+$if[$isAdmin[$authorID]==false]
+<:errado:1342581104305115239> ╸<@$authorID>, você não possui a permissão de **`administrador`** para utilizar este comando.
+$reply $stop $endif
+
+$if[1==1]<@$authorID>$endif
+
+$title[CONFIGURAÇÃO - $serverName[$guildID]]
+$description[- Olá **$username** bem vindo ao menu de configuração. Aqui você pode me personalizar e ativar varias outras funções aqui no servidor!]
+$footer[Utilize os botões abaixo para configurar!]
+
+$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/config/server;📜 SERVIDOR;primary;no;]
+$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/config/botlist;🤖 BOTLIST;primary;no;]
