@@ -1,3 +1,8 @@
-$newModal[$authorID/canal/msg-proibido;Mensagem Para Canais Proibidos]
-$addTextInput[1;short;ESCREVA A MENSAGEM AQUI:;1;1000;yes;;{username}, {mention}, {channel}, {servername}]
-
+$ephemeral
+$title[Enviar Texto]
+$description[<@$authorID> envie o texto que será enviado quando alguem utilizar meus comandos em canais proibidos.
+- **Informações:**
+> {username} - Nome do usuário que usou o comando.
+> {mention} - Menção do usuário que usou o comando.
+> {channel} - Nome menção do canal que o usuário usou o comando.
+> {servername} - Nome do servidor.]
