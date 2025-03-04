@@ -1,0 +1,3 @@
+$nomention
+$newModal[$authorID¨modal¨canal-proibido;CONFIGURAÇÃO]
+$addTextInput[1;short;ID DO CANAL;1;300;yes;;Coloque o ID do canal que deseja bloquear ou desbloquear aqui.]
