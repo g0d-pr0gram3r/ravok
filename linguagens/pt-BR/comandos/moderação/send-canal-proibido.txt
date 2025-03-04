@@ -1,0 +1,10 @@
+$ephemeral
+
+$onlyIf[$channelType[$input[1]]==text;<:errado:1342581104305115239> **|** <@$authorID>, você só pode bloquear o uso dos meus comandos em canais de texto!]
+$onlyIf[$channelExists[$input[1]]==true;<:errado:1342581104305115239> **|** <@$authorID>, o canal enviado ( `$input[1]` ) não existe!]
+$onlyIf[$serverChannelExists[$input[1]]==true;<:errado:1342581104305115239> **|** <@$authorID>, o canal enviado ( `$input[1]` ) não existe nesse servidor!]
+
+$textSplit[$getChannelVar[server-config;$input[1]];¨]
+$if[$splitText[1]==n] $setChannelVar[server-config;s;$input[1]] $elseif[$splitText[1]==s] $setChannelVar[server-config;n;$input[1]] $endif
+
+<:CERTO:1342581098026242079> **|** <@$authorID>, você **$if[$splitText[1]==s]des$endifbloqueou o canal <#$input[1]> com sucesso!
