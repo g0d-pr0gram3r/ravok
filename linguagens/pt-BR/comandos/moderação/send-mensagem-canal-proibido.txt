@@ -1,0 +1,4 @@
+$ephemeral
+
+$setUserVar[server-config;$input[1];$botID]
+<:CERTO:1342581098026242079> **|** <@$authorID>, você alterou a mensagem com sucesso!
