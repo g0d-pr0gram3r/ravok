@@ -1,3 +1,3 @@
 $nomention
 $newModal[$authorID¨modal¨msg-proibido;CONFIGURAÇÃO]
-$addTextInput[1;paragraph;MENSAGEM DE CANAIS PROIBIDOS;1;30;yes;;escreva a mensagemm aqui]
+$addTextInput[1;paragraph;MENSAGEM DE CANAIS PROIBIDOS;1;30;yes;;$if[$textSplit[$getUserVar[server-config;$botID];¨]$splitText[1]!=n] $getUserVar[server-config;$botID] $else <:errado:1342581104305115239> **|** <@$authorID>, você não pode usar comandos no <#$channelID> $endif]
