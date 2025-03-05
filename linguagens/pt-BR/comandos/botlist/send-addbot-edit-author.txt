@@ -1,0 +1,22 @@
+$textSplit[$getServerVar[botlist;$guildID];¨]
+$httpGet[https://pastefy.app/$splitText[1]/raw]
+
+$httpPut[https://pastefy.app/api/v2/paste/$splitText[1];{
+    "type": "PASTE",
+    "title": "$guildID - EMBED ADDBOT",
+    "content": "{\"content\":\"$httpResult[content]\",\"embed\":{\"author\":\"$input[1]\",\"author_icon\":\"$input[2]\",\"title\":\"$httpResult[embed;title]\",\"desc\":\"$httpResult[embed;desc]\",\"color\":\"$httpResult[embed;color]\",\"footer\":\"$httpResult[embed;footer]\",\"footer_icon\":\"$httpResult[embed;footer_icon]\",\"thumbnail\":\"$httpResult[embed;thumbnail]\",\"image\":\"$httpResult[embed;image]\"},\"button\":{\"style\":\"$httpResult[button;style]\",\"content\":\"$httpResult[button;content]\",\"emoji\":\"$httpResult[button;emoji]\"}}",
+    "visibility": "UNLISTED",
+    "encrypted": false
+}]
+$httpGet[https://pastefy.app/$splitText[1]/raw]
+
+$httpResult[content]
+$if[$httpResult[embed;title]!=]$title[$httpResult[embed;title]]$endif
+$if[$httpResult[embed;desc]!=]$description[$httpResult[embed;desc]]$endif
+$if[$httpResult[embed;color]!=]$color[$httpResult[embed;color]]$endif
+$if[$httpResult[embed;author]!=]$author[$httpResult[embed;author]]$endif
+$if[$httpResult[embed;author_icon]!=]$try $authorIcon[$httpResult[embed;author_icon]] $endtry $endif
+$if[$httpResult[embed;footer]!=]$footer[$httpResult[embed;footer]]$endif
+$if[$httpResult[embed;footer_icon]!=]$try $footerIcon[$httpResult[embed;footer_icon]] $endtry $endif
+$if[$httpResult[embed;thumbnail]!=]$try $thumbnail[$httpResult[embed;thumbnail]] $endtry $endif
+$if[$httpResult[embed;image]!=]$try $image[$httpResult[embed;image]] $endtry $endif
