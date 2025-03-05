@@ -4,7 +4,7 @@ $textSplit[$getServerVar[botlist;$guildID];¨]
 $httpGet[https://pastefy.app/$splitText[1]/raw]
 
 $addButton[no;,,,;$httpResult[button;content];$httpResult[button;style];no;$httpResult[button;emoji]]
-$addButton[no;addbot/config;;primary;no;<:config:1346669659910312070>]
+$addButton[no;addbot/config;;secondary;no;<:config:1346669659910312070>]
 
 $httpResult[content]
 $if[$httpResult[embed;title]!=]$title[$httpResult[embed;title]]$endif
