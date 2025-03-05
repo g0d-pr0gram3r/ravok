@@ -1,4 +1,4 @@
-$removeAllComponents
+$removeButtons
 
 $textSplit[$getServerVar[botlist;$guildID];¨]
 $httpGet[https://pastefy.app/$splitText[1]/raw]
