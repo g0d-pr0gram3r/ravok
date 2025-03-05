@@ -15,5 +15,5 @@ $title[CONFIGURAÇÃO - $serverName[$guildID]]
 $description[- Olá **$username** bem vindo ao menu de configuração. Aqui você pode me personalizar e ativar varias outras funções aqui no servidor!]
 $footer[Utilize os botões abaixo para configurar!]
 
-$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/config/server;📜 SERVIDOR;primary;no;]
-$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/config/botlist;🤖 BOTLIST;primary;no;]
+$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/config/server;Servidor;primary;no;<:discord:1346874615561060374>]
+$addButton[no;$authorID/$calculate[$getTimestamp+(60*20)]/config/botlist;Botlist;primary;no;<:addbot:1346874360442519562>]
