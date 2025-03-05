@@ -17,8 +17,8 @@ $httpGet[https://pastefy.app/$splitText[1]/raw]
 $var[id;$sendEmbedMessage[$channelID;$httpResult[content];$httpResult[embed;title];;$httpResult[embed;desc];$httpResult[embed;color];$httpResult[embed;author];$httpResult[embed;author_icon];$httpResult[embed;footer];$httpResult[embed;footer_icon];$httpResult[embed;thumbnail];$httpResult[embed;image];no;yes]]
 
 $async[button]
-$addButton[no;addbot/enviar;$httpResult[button;content];$httpResult[button;style];no;$httpResult[button;content]]
-$addButton[no;addbot/config;;secondary;no;<:config:1346669659910312070>]
+$addButton[no;addbot/enviar;$httpResult[button;content];$httpResult[button;style];no;$httpResult[button;content];$var[id]]
+$addButton[no;addbot/config;;secondary;no;<:config:1346669659910312070>;$var[id]]
 
 $endasync
 $endif
