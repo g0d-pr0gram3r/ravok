@@ -1,1 +1,9 @@
+$textSplit[$getServerVar[server-config;$guildID];¨]
 
+$if[$splitText[5]==n]
+<:errado:1342581104305115239> **|** <@$authorID>, o sistema de botlist neste servidor está desativado!$if[$isAdmin[$authorID]==true]Use o comando **`r!config`** para ligalo$endif
+$elseif[$splitText[5]==s]
+
+
+
+$endif
