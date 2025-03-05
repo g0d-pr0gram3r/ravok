@@ -1,0 +1,19 @@
+$removeAllComponents
+
+$textSplit[$getServerVar[botlist;$guildID];¨]
+$httpGet[https://pastefy.app/$splitText[1]/raw]
+
+$addButton[no;,,,;$httpResult[button;content];$httpResult[button;style];yes;$httpResult[button;emoji]]
+$addButton[no;addbot/voltar;Label;primary;no;]
+$addButton[yes;addbot/edit/author;Author;primary;no;]
+$addButton[no;addbot/edit/author_icon;Author Icon;primary;no;]
+$addButton[no;addbot/edit/title;Titulo;primary;no;]
+$addButton[no;addbot/edit/desc;Descrição;primary;no;]
+$addButton[yes;addbot/edit/color;Cor;primary;no;]
+$addButton[no;addbot/edit/footer;Footer;primary;no;]
+$addButton[no;addbot/edit/footer_icon;Footer Icon;primary;no;]
+$addButton[no;addbot/edit/thumb;Thumbnail;primary;no;]
+$addButton[no;addbot/edit/image;Imagem;primary;no;]
+$addButton[no;addbot/edit/b-text;Texto Botão;primary;no;]
+$addButton[yes;addbot/edit/b-color;Cor Botão;primary;no;]
+$addButton[no;addbot/edit/b-emoji;Emoji Botão;primary;no;]
