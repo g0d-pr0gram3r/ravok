@@ -4,6 +4,21 @@ $if[$splitText[5]==n]
 <:errado:1342581104305115239> **|** <@$authorID>, o sistema de botlist neste servidor está desativado!$if[$isAdmin[$authorID]==true] Use o comando **`r!config`** para ligalo$endif
 $elseif[$splitText[5]==s]
 
+$textSplit[$getServerVar[botlist;$guildID];¨]
+$if[$splitText[1]==]
+$httpAddHeader[Authorization;Bearer TTJfjU5odhSnxecFz0JCVmwDeqeBQ5lCyj5C0UQ2VDKlAUcQFbnSNuLXIPyZ]
+$httpPost[https://pastefy.app/api/v2/paste;{"type": "PASTE","title": "$guildID - EMBED ADDBOT","content":"{\"content\":\"\",\"embed\":{\"author\":\"\",\"author_icon\":\"\",\"title\":\"Addbot\",\"desc\":\"Use o botão abaixo e envie seu bot!\",\"color\":\"\",\"footer\":\"\",\"footer_icon\":\"\",\"thumbnail\":\"\",\"image\":\"\"},\"button\":{\"style\":\"primary\",\"content\":\"Adicionar Bot\",\"emoji\":\"<:add:1346661982647877633>\"}}","visibility":"UNLISTED","encrypted": false}]
 
+$setServerVar[botlist;$httpResult[paste;id]¨$splitText[2]¨$splitText[3]¨$splitText[4]¨$splitText[5]¨$splitText[6]¨$splitText[7]¨$splitText[8]¨$splitText[9]¨$splitText[10]¨$splitText[11];$guildID]
+$endif
+$textSplit[$getServerVar[botlist;$guildID];¨]
+$httpGet[https://pastefy.app/$splitText[1]/raw]
 
+$var[id;$sendEmbedMessage[$channelID;$httpResult[content];$httpResult[embed;title];;$httpResult[embed;desc];$httpResult[embed;color];$httpResult[embed;author];$httpResult[embed;author_icon];$httpResult[embed;footer];$httpResult[embed;footer_icon];$httpResult[embed;thumbnail];$httpResult[embed;image];no;yes]]
+
+$async[button]
+$addButton[no;addbot/enviar;$httpResult[button;content];$httpResult[button;style];no;$httpResult[button;content]]
+$addButton[no;addbot/config;;secondary;no;<:config:1346669659910312070>]
+
+$endasync
 $endif
