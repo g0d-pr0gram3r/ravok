@@ -1,0 +1,4 @@
+$nomention
+$newModal[$authorID/modal/addbot/editar-author;CONFIGURAÇÃO]
+$addTextInput[1;short;NOVO TEXTO;0;250;no;;Escreva o texto que deseja adicionar.]
+$addTextInput[2;short;NOVA IMAGEM;0;4000;no;;Envie o link da imagem a adicionar.]
